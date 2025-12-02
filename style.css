@@ -1,0 +1,383 @@
+#ecran{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jeu
+{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    border: 1px solid black;
+    overflow: hidden;
+    background: url('./perso/scene/scene1.jpg');
+}
+
+/* affichage stat */
+.stat{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
+.leftstat,
+.rightstat{
+    padding: 15px;
+}
+
+.nameV
+{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.barreV
+{
+    position: relative;
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.barreleft::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    height: 21px;
+    width: var(--vieHero);
+    transition: width 0.5s ease;
+}
+
+.barreright::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    height: 21px;
+    width: var(--vieEnemy);
+    transition: width 0.5s ease;
+}
+/* hero personnage ************ */
+.hero{
+    position: absolute;
+    width: 55px;
+    height: 57px;
+    background: url('perso/hero/frameh4.png');
+    background-repeat: no-repeat;
+    bottom: 0;
+    transition: left 100ms;
+}
+
+.leftdirection{
+    transform: scaleX(-1);
+}
+
+.animation
+{
+    animation: anim 250ms;
+}
+
+@keyframes anim {
+    0% { background: url('perso/hero/frameh4.png');
+    background-repeat: no-repeat;
+    }
+
+    30% { background: url('perso/hero/frameh5.png');
+    background-repeat: no-repeat;
+    }
+    72% { background: url('perso/hero/frameh6.png');
+    background-repeat: no-repeat;
+    
+    }
+    100% { background: url('perso/hero/frameh7.png');
+    background-repeat: no-repeat;
+    
+    }
+}
+
+.animationAttak{
+    animation: animAttk 500ms;
+}
+
+@keyframes animAttk {
+    0% { background: url('perso/hero/framehA1.png');
+    background-repeat: no-repeat;
+    }
+
+    30% { background: url('perso/hero/framehA2.png');
+    background-repeat: no-repeat;
+    }
+    72% { background: url('perso/hero/framehA3.png');
+    background-repeat: no-repeat;
+    
+    }
+    100% { background: url('perso/hero/framehA1.png');
+    background-repeat: no-repeat;
+    
+    }
+}
+
+/* feu du hero  ********* */
+.feu
+{
+    position: absolute;
+    right: 9px;
+    top: 12.8%;
+    display: none;
+}
+
+.animationfeu{
+    display: block;
+    animation: animfeu 1000ms;
+}
+
+@keyframes animfeu {
+    0% { 
+    left: 9px;
+
+    /* }
+
+    30% { 
+    left: 100px;
+    opacity: 0.5;
+
+    }
+    72% { 
+    left: 400px;
+    opacity: 0.8;
+     */
+    }
+    100% {   
+    left: var(--ecran);
+    opacity: 1;
+
+    }
+}
+
+/* hero toucher  */
+.herotouche{
+    animation: herotouch 1500ms;
+}
+
+@keyframes herotouch {
+    0% { background: url('perso/hero/frameh1t.png');
+        background-repeat: no-repeat;
+        }
+    55% { background: url('perso/hero/frameh1t.png');
+            background-repeat: no-repeat;
+            }  
+    64% { opacity: 1;}   
+    65% { background: url('perso/hero/frameh2t.png');
+            background-repeat: no-repeat;
+            opacity: 0;
+            } 
+    66% { opacity: 1;}     
+    74% { opacity: 1;}       
+    75% { background: url('perso/hero/frameh3t.png');
+                background-repeat: no-repeat;
+            opacity: 0;
+                }
+     76% { opacity: 1;}   
+        89% { opacity: 1;}       
+    90% { background: url('perso/hero/frameh4t.png');
+            background-repeat: no-repeat;
+            opacity: 0;
+            }   
+              91% { opacity: 1;}   
+}
+
+
+/* animation du game over */
+.animationGOh{
+    background: url('perso/hero/framehg5.png');
+    background-repeat: repeat;
+    animation: animheroGO 2000ms;
+}
+
+@keyframes animheroGO {
+    0% { background: url('perso/hero/frameh4.png');
+        background-repeat: no-repeat;
+        }
+    60% { background: url('perso/hero/frameh4.png');
+        background-repeat: no-repeat;
+        }
+    70% { background: url('perso/hero/framehg1.png');
+    background-repeat: no-repeat;
+    }
+
+    77% { background: url('perso/hero/framehg2.png');
+    background-repeat: no-repeat;
+    }
+    84% { background: url('perso/hero/framehg3.png');
+        background-repeat: no-repeat;    
+        }
+    90% { background: url('perso/hero/framehg4.png');
+    background-repeat: no-repeat;    
+    }
+    100% { background: url('perso/hero/framehg5.png');
+    background-repeat: no-repeat;
+    
+    }
+}
+
+
+/* enemy perso  ********************************/
+/* ****************************************** */
+.enemy{
+    position: absolute;
+    width: 55px;
+    height: 57px;
+    background: url('perso/enemy/frameE.png');
+    background-repeat: no-repeat;
+    right: 0;
+    bottom: 0;
+    transition: left 100ms;
+    animation: animEnemy 700ms infinite;
+    z-index: 10;
+}
+
+@keyframes animEnemy {
+    0% { background: url('perso/enemy/frameE.png');
+    background-repeat: no-repeat;
+    }
+
+    30% { background: url('perso/enemy/frameE2.png');
+    background-repeat: no-repeat;
+    }
+    72% { background: url('perso/enemy/frameE3.png');
+    background-repeat: no-repeat;
+    
+    }
+    100% { background: url('perso/enemy/frameE4.png');
+    background-repeat: no-repeat;
+    
+    }
+}
+
+.sautEnemy{
+    animation: sautEnemy 500ms;
+}
+
+@keyframes sautEnemy {
+    0% { bottom: 0%;
+    }
+
+    100% { bottom: 20%;
+    
+    }
+}
+
+.enemytouche{
+    animation: enemytouch 750ms;
+}
+
+@keyframes enemytouch {
+    0% { background: url('perso/enemy/frameE.png');
+        background-repeat: no-repeat;
+        }
+        20% { background: url('perso/enemy/frameE2.png');
+            background-repeat: no-repeat;
+            }    
+    
+            35% { background: url('perso/enemy/frameE2.png');
+                background-repeat: no-repeat;
+                }
+        50% { background: url('perso/enemy/frameEt.png');
+            background-repeat: no-repeat;
+            }
+        75% { background: url('perso/enemy/frameEt1.png');
+        background-repeat: no-repeat;
+        }
+            
+        100% { background: url('perso/enemy/frameEt2.png');
+        background-repeat: no-repeat;
+        
+        }
+}
+
+/* *********feu enemy */
+.feuE
+{
+    position: absolute;
+    right: 20px;
+    top: 12.8%;
+    display: none;
+    /* animation: animfeuE 1000ms; */
+    z-index: 0;
+}
+
+.animationfeuE{
+    display: block;
+    animation: animfeuE 1500ms;
+}
+
+@keyframes animfeuE {
+    0% { 
+    right: 20px;
+    opacity: 0;    
+    }
+
+    50% { 
+        transform: rotateX(40);
+        right: 20px;
+    opacity: 0;    
+
+    }
+    50% { 
+        transform: rotateX(20);
+        right: 30px;
+    opacity: 1;    
+
+    }
+    72% { 
+    transform: rotateX(10);
+    right: 400px;
+    }
+    100% {   
+    right: var(--ecran);
+    opacity: 1;
+
+    }
+}
+
+/* game over enemy */
+.animationGOe{
+    background: url('perso/enemy/frameEG5.png');
+    background-repeat: repeat;
+    animation: animenemuGO 2000ms;
+}
+
+@keyframes animenemuGO {
+    0% { background: url('perso/enemy/frameE.png');
+        background-repeat: no-repeat;
+        }
+    60% { background: url('perso/enemy/frameEG1.png');
+        background-repeat: no-repeat;
+        }
+    70% { background: url('perso/enemy/frameEG1.png');
+    background-repeat: no-repeat;
+    }
+
+    77% { background: url('perso/enemy/frameEG2.png');
+    background-repeat: no-repeat;
+    }
+    84% { background: url('perso/enemy/frameEG3.png');
+        background-repeat: no-repeat;    
+        }
+    90% { background: url('perso/enemy/frameEG4.png');
+    background-repeat: no-repeat;    
+    }
+    100% { background: url('perso/enemy/frameEG5.png');
+    background-repeat: no-repeat;
+    
+    }
+}

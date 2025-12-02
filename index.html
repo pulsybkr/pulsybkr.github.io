@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="level.css">
+
+</head>
+<body>
+
+    <section id="ecran">
+        <div class="jeu">
+            <div class="level">
+               <h2 class="nextlevel">
+                    VOUS AVEZ VAINCU L'enemie
+               </h2>
+               <p>
+                appuyer sur la touche entree pour passer au prochain étap
+    
+               </p>
+            </div>
+            <div class="stat">
+                <div class="leftstat">
+                    <div class="nameV nameleft">
+                        
+                    </div>
+                    <div class="barreV barreleft">
+    
+                    </div>
+                    <div class="forceV forceleft">
+                        *****
+                    </div>
+                </div>
+                <div class="rightstat">
+                    <div class="nameV nameright">
+                    </div>
+                    <div class="barreV barreright">
+    
+                    </div>
+                    <div class="forceV forceright">
+                        ****
+                    </div>
+                </div>
+            </div>
+            <div class="hero">
+                <div class="feu">
+                    <img src="perso/hero/feu.png" alt="">                
+                </div>
+            </div>
+            <div class="enemy">
+                <div class="feuE">
+                    <img src="perso/enemy/feu.png" alt="">                
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+    <!-- fichier json -->
+    <script type="text/javascript" src="./json_file/players.json"></script>
+    <script type="text/javascript" src="./json_file/enemies.json"></script>
+
+    <script src="app.js"></script>
+    <!-- <script src="stat.js"></script> -->
+
+</body>
+</html>
