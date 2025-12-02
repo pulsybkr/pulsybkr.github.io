@@ -4,67 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Combat Arena - Jeu de Combat 2D</title>
+    <meta name="description" content="Jeu de combat 2D moderne avec système de combos, capacités spéciales et progression">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/animations.css">
     <link rel="stylesheet" href="level.css">
-
 </head>
 <body>
-
     <section id="ecran">
         <div class="jeu">
+            <!-- Écran de transition de niveau -->
             <div class="level">
                <h2 class="nextlevel">
-                    VOUS AVEZ VAINCU L'enemie
+                    VOUS AVEZ VAINCU L'ENNEMI
                </h2>
                <p>
-                appuyer sur la touche entree pour passer au prochain étap
-    
+                Appuyez sur la touche ENTRÉE pour passer au prochain niveau
                </p>
             </div>
+
+            <!-- Statistiques des personnages -->
             <div class="stat">
                 <div class="leftstat">
-                    <div class="nameV nameleft">
-                        
-                    </div>
-                    <div class="barreV barreleft">
-    
-                    </div>
-                    <div class="forceV forceleft">
-                        *****
-                    </div>
+                    <div class="nameV nameleft"></div>
+                    <div class="barreV barreleft"></div>
+                    <div class="forceV forceleft">*****</div>
                 </div>
                 <div class="rightstat">
-                    <div class="nameV nameright">
-                    </div>
-                    <div class="barreV barreright">
-    
-                    </div>
-                    <div class="forceV forceright">
-                        ****
-                    </div>
+                    <div class="nameV nameright"></div>
+                    <div class="barreV barreright"></div>
+                    <div class="forceV forceright">****</div>
                 </div>
             </div>
+
+            <!-- Héros -->
             <div class="hero">
                 <div class="feu">
-                    <img src="perso/hero/feu.png" alt="">                
+                    <img src="perso/hero/feu.png" alt="Projectile héros">                
                 </div>
             </div>
+
+            <!-- Ennemi -->
             <div class="enemy">
                 <div class="feuE">
-                    <img src="perso/enemy/feu.png" alt="">                
+                    <img src="perso/enemy/feu.png" alt="Projectile ennemi">                
                 </div>
             </div>
         </div>
-    
     </section>
 
-    <!-- fichier json -->
-    <script type="text/javascript" src="./json_file/players.json"></script>
-    <script type="text/javascript" src="./json_file/enemies.json"></script>
-
-    <script src="app.js"></script>
-    <!-- <script src="stat.js"></script> -->
-
+    <!-- Scripts - ES6 Modules -->
+    <script type="module" src="app.js"></script>
 </body>
 </html>

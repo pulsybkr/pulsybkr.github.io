@@ -1,19 +1,18 @@
 {
+  "name": "combat-game",
+  "version": "2.0.0",
+  "description": "Jeu de combat 2D modernisé avec ES6",
   "type": "module",
-  "name": "javascript",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx http-server -p 8080 -c-1",
+    "dev": "npx http-server -p 8080 -c-1 -o"
   },
-  
-    "compilerOptions": {
-      "target": "esnext",
-      "module": "commonjs",
-      "esModuleInterop": true
-    }
-  
-  
-
+  "keywords": [
+    "game",
+    "combat",
+    "2d",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT"
 }
